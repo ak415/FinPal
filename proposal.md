@@ -31,11 +31,11 @@ In addition, this project will include:
 
 ### Wireframes
 
-This app will consist of a single screen with the valuation method selectors and nav links to the Github, my LinkedIn 
+This app will consist of a single screen with the valuation method selectors and nav links to the Github and my LinkedIn.
 
-Valuation selector will include a dropdown to choose the methodologies to be used. Users will be able to choose more than one method and apply weighting. 
+The valuation selector will include a dropdown to choose the methodologies to be used. Users will be able to choose more than one method and apply weightings. 
 
-Valuation completion status bar on top of the page. 
+A valuation completion status bar on top of the page will let the user know what the percentage of completion is. 
 
 On the left, there will be a menu showing the user what the steps leading to the valuation completion are. 
 
@@ -87,4 +87,5 @@ In addition to the webpack entry file, there will be three scripts involved in t
 There are many directions in which this project could evolve.
 
 - [ ] Use API to pull financial data automatically if a user has selected a public company
+- [ ] Provide the option to download an excel spreadsheet with the valuations
 
