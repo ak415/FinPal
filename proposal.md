@@ -74,6 +74,10 @@ In addition to the webpack entry file, there will be three scripts involved in t
 **Day 3**: Complete the models. Goals for the day:
 
 - [x] Build out a functional DCF model. 
+
+![wireframes](https://github.com/aazaiez/FinPal/blob/master/Docs/DCF.png?raw=true)
+
+
 - [x] Build out a functional Revenue Multiples model. 
 - [x] Build out a functional Asset model. 
 
