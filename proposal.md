@@ -39,7 +39,7 @@ A valuation completion status bar on top of the page will let the user know what
 
 On the left, there will be a menu showing the user what the steps leading to the valuation completion are. 
 
-![wireframes](tbd)
+![wireframes](https://github.com/aazaiez/FinPal/blob/master/Docs/Homepage.png?raw=true)
 
 ### Architecture and Technologies
 
