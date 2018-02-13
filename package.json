@@ -1,0 +1,29 @@
+{
+  "name": "finpal",
+  "version": "1.0.0",
+  "description": "FinPal is a stock visualization tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aazaiez/FinPal.git"
+  },
+  "author": "Akram Azaiez <azaiezakrem@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aazaiez/FinPal/issues"
+  },
+  "homepage": "https://github.com/aazaiez/FinPal#readme",
+  "dependencies": {
+    "alpha-vantage-cli": "^1.0.8",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "lodash": "^4.17.5",
+    "webpack": "^3.11.0"
+  },
+  "devDependencies": {}
+}
