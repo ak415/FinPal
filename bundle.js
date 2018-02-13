@@ -70,10 +70,13 @@
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__search_stocks__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__stock_chart__ = __webpack_require__(2);
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
 let searchStocks = new __WEBPACK_IMPORTED_MODULE_0__search_stocks__["a" /* default */]();
+Object(__WEBPACK_IMPORTED_MODULE_1__stock_chart__["a" /* default */])();
 });
 
 
@@ -137,6 +140,35 @@ class SearchStocks {
 window.SearchStocks = SearchStocks;
 
 /* harmony default export */ __webpack_exports__["a"] = (SearchStocks);
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+let ChartGenerate = function (){
+  let myChart = document.getElementById('stock-chart').getContext('2d');
+  let line = new Chart(myChart,{
+    type: 'line',
+    data:{
+      labels: ["Jan","Feb","March","April","May"],
+      datasets: [{
+        label: "My Data",
+        backgroundColor: "rgb(221,85,31)",
+        borderColor: "rgb(221,85,31)",
+        data: [50,34,23,12,1]
+      }]
+    },
+    options:{
+      responsive: true
+    }
+  });
+};
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = (ChartGenerate);
 
 
 /***/ })

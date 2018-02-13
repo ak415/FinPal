@@ -6,22 +6,81 @@
 
     <meta charset="utf-8">
     <title>Stock Analysis</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="bundle.js">
-    </script>
-    <link rel="stylesheet" href="./app/css_reset.css">
+
+
+    <!-- <link rel="stylesheet" href="./app/css_reset.css"> -->
     <link rel="stylesheet" href="./app/application.css">
   </head>
   <body>
-    <h1>Welcome to FinPal</h1>
+    <header>
+      <div class="title-wrapper">
+        <p class="finpal-title">FinPal</p>
+      </div>
+    </header>
     <div class="stock-Search">
       <form id="stock-search-form">
-        <input type="text"
-        name="ticker"
-        placeholder="search stock (e.g. AAPL)"></input>
-        <input type="submit" value="Search"></input>
+        <div class="input-wrapper">
+          <input
+          autofocus
+          type="text"
+          name="ticker"
+          placeholder="search stock (e.g. AAPL)"
+          class='search-input'>  </input>
+          <input style="display:none;" type="submit" value="Search"></input>
+        </div>
+
+
+
+    <div class="wrapper-content">
+
+
+        <div class="chart-and-stats-flex">
+
+
+          <div class="chart-and-stats-wrapper">
+            <div class="stock-name-and-price">
+              <p class="stock-name">
+                TICKER NAME
+              </p>
+              <p class="stock-previous-day-closing">
+                PRICE
+              </p>
+            </div>
+
+            <div class="chart">
+              <canvas id="stock-chart"></canvas>
+            </div>
+            <div class="stats">
+              <h2>Stats go here</h2>
+            </div>
+
+          </div>
+
+
+           <div class"News">
+             <p>News</p>
+
+           </div>
+
+       </div>
+
+
+       </div>
+
+
+
+
+
+
+
+
+
+
       </form>
     </div>
     <div id="result"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+    <script type="text/javascript" src="bundle.js"></script>
   </body>
 </html>
