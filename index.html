@@ -27,24 +27,30 @@
           placeholder="search stock (e.g. AAPL)"
           class='search-input'>  </input>
           <input style="display:none;" type="submit" value="Search"></input>
+          <div id="loader" class="loader"></div>
         </div>
+
 
 
 
     <div class="wrapper-content">
 
 
-        <div class="chart-and-stats-flex">
+        <div class="chart-stats-news-flex">
 
 
           <div class="chart-and-stats-wrapper">
             <div class="stock-name-and-price">
-              <p class="stock-name">
-                TICKER NAME
-              </p>
-              <p class="stock-previous-day-closing">
-                PRICE
-              </p>
+
+                <p class="company-name-title"> Company Name
+                </p>
+
+
+
+              <div class="price-flex">
+                <p id="previous-close" class="stock-price">
+                </p>
+              </div>
             </div>
 
             <div class="chart">
@@ -56,11 +62,38 @@
 
           </div>
 
+          <div class="news-wrap">
+          <p>News</p>
+           <div id="fetched-news" class"news-flex">
 
-           <div class"News">
-             <p>News</p>
+
+              <div class="title-date">
+
+                <div id="title" class="title">
+
+                </div>
+                <div id="date" class="date">
+
+                </div>
+
+              </div>
+
+              <div class="url-source">
+
+                <div id="url" class="url">
+
+                </div>
+
+                <div id="source" class="source">
+
+                </div>
+
+              </div>
+
 
            </div>
+
+         </div>
 
        </div>
 

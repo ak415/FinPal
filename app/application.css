@@ -77,16 +77,20 @@ body {
 .search-input{
   font-size: 32px;
   text-align: center;
-  margin: 35px 20px 10px 20px;
-  padding: 10px 20px 10px 20px;
+  margin: 0px 0px 10px 0px;
+  padding: 10px 0px 10px 0px;
   width: 400px;
   background: white;
   border-radius: 3px;
 }
 
 .input-wrapper {
+  margin: 40px 0 0 0;
   display: flex;
-  justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .chart {
@@ -97,8 +101,9 @@ body {
   margin-bottom: 30px;
 }
 
-.chart-and-stats-flex {
+.chart-stats-news-flex {
   display: flex;
+
   margin: 50px;
 }
 
@@ -110,8 +115,10 @@ body {
   margin-right: 25px;
 }
 
-.news {
-  width: 30%;
+.news-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .wrapper-content {
@@ -122,6 +129,8 @@ body {
 .stock-name-and-price{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
 }
 
@@ -130,6 +139,52 @@ body {
   margin-right: 20px;
 }
 
-.stock-previous-day-closing {
-    font-size: 20px;
+.stock-price {
+  font-size: 30px;
+  text-align: center;
+  color: white;
+}
+
+.price-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #2E582E;
+  width: 165px;
+  height: 50px;
+  border-radius: 3px;
+}
+
+.price-title {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+
+.company-name-title {
+  font-size: 24px;
+}
+
+.loader {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #3498db;
+  border-right: 8px solid green;
+  border-bottom: 8px solid red;
+  border-left: 8px solid blue;  /* Blue */
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  animation: spin 2s linear infinite;
+  margin: -8px 0 0 -50px;
+  display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.news-wrap {
+  width: 30%;
 }
