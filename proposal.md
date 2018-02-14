@@ -1,30 +1,22 @@
-## FinPal - Let's build a better understanding of stocks. 
+## FinPal - Let's build a better understanding of stocks.
 
 ### Background and Overview
 
-FinPal is a tool that allows getting informaton about stocks while providing educational information about the different metrics that most people without a finance background would not be able to understand.
+FinPal is a tool that allows getting information about stocks and news related to the company selected.
 
 
 
-Users can search specific stocks and find out their performance over a period of time they get to select. 
-
-Additionally, users are able to:
-* Compare the stocks' perfomance to specific benchmarks such as the S&P 500. 
-* Compare the performance of companies within the same industry. 
+Users can search specific stocks and find out their performance over a period of time they get to select.
 
 
 ### Functionality & MVP  
 
 In FinPal, users will be able to:
 
-- [ ] Search for specifc stocks. 
-- [ ] Gain a better understanding of financial terms. 
-- [ ] Analyze the stock's performance over a specifc period of time. 
+- [ ] Search for specifc stocks.
+- [ ] Gain a better understanding of financial terms.
+- [ ] Get information about the stock's performance over a specifc period of time.
 
-In addition, this project will include:
-
-- [ ] Descriptions of the different inputs requested from the user. 
-- [ ] An valuation overview once the user has provided all the info. 
 
 ### Wireframes
 
@@ -32,7 +24,7 @@ This app will consist of a single screen with the search bar, the stock display 
 
 The metrics provided for every single stock a user looks up will be highlighted and clicking on them will trigger displaying a message (or a modal) explaining the relevance of that specifc information.  
 
-A sidebar with real time information about the stock imported from twitter or other APIs will be displayed. 
+A sidebar with real time information about the stock imported from twitter or other APIs will be displayed.
 
 ![wireframes](https://github.com/aazaiez/FinPal/blob/master/Docs/Homepage.png?raw=true)
 
@@ -60,7 +52,7 @@ In addition to the webpack entry file, there will be three scripts involved in t
 
 **Day 1**: Setup all necessary Node modules, including getting webpack up and running.  Create `webpack.config.js` as well as `package.json`.  Write a basic entry file and the bare bones of the 2 scripts outlined above. Goals for the day:
 
-- [x] Get `webpack` serving files and 
+- [x] Get `webpack` serving files and
 - [x] Frame out index.html
 
 **Day 2**: Dedicate this day to making sure all the information is coming through the APIx. Then, use `display.js` to create and render `Stocks`. Goals for the day:
@@ -68,9 +60,9 @@ In addition to the webpack entry file, there will be three scripts involved in t
 - [x] Complete the `valuations.js` module
 
 
-**Day 3**: Educationn. Goals for the day:
+**Day 3**: Chart. Goals for the day:
 
-- [x] Build out the modals/means to display the educational messages. 
+- [x] Build out chart.
 
 - [x] Make sure the user has a smooth experience and can easily go back to the stock's page.
 
@@ -85,4 +77,3 @@ In addition to the webpack entry file, there will be three scripts involved in t
 There are many directions in which this project could evolve.
 
 - [X] Add a feature that would allow the user to create an account and build a virtual portfolio.  
-

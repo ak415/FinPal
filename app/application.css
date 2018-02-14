@@ -64,7 +64,21 @@ body {
   background: #003300;
 }
 
+.date {
+  width: 35%;
+  margin-left: 10px;
+  text-align: right;
+}
 
+.title-date {
+  display: flex;
+  flex-direction: row;
+  box-sizing:border-box;
+  width: inherit;
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-top: 5px;
+}
 
 .finpal-title {
   font-size: 40px;
@@ -75,7 +89,7 @@ body {
 }
 
 .search-input{
-  font-size: 32px;
+  font-size: 22px;
   text-align: center;
   margin: 0px 0px 10px 0px;
   padding: 10px 0px 10px 0px;
@@ -105,12 +119,13 @@ body {
   display: flex;
 
   margin: 50px;
+  font-size: 12px;
 }
 
 .chart-and-stats-wrapper {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 65%;
   height: 100%;
   margin-right: 25px;
 }
@@ -119,12 +134,18 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background: white;
+  height: 100%;
 }
 
 .wrapper-content {
   margin: 30px 150px 0px 150px
 }
 
+#fetched-news {
+  background: white;
+  height: inherit;
+}
 
 .stock-name-and-price{
   display: flex;
@@ -140,7 +161,7 @@ body {
 }
 
 .stock-price {
-  font-size: 30px;
+  font-size: 28px;
   text-align: center;
   color: white;
 }
@@ -162,7 +183,7 @@ body {
   justify-content: center;
   align-items: center;
   background: #2E582E;
-  width: 165px;
+  width: 125px;
   height: 50px;
   border-radius: 3px;
 }
@@ -174,7 +195,7 @@ body {
 
 
 .company-ticker {
-  font-size: 30px;
+  font-size: 28px;
   text-align: center;
   color: white;
 }
@@ -199,5 +220,33 @@ body {
 }
 
 .news-wrap {
-  width: 30%;
+  width: 35%;
+  background: #2E582E;
+  border-radius: 3px;
+}
+
+
+
+.news-wrap p {
+  font-size: 28px;
+  padding: 8px 20px 5px 20px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.url-source{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+  box-sizing:border-box;
+  width: inherit;
+  padding: 0 7px 5px 7px;
+  border-bottom:1px solid black;
+}
+
+#fetched-news a {
+  color: #FF0000;
+  font-weight: 600;
+  padding-right: 5px;
 }
