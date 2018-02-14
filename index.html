@@ -24,7 +24,7 @@
           autofocus
           type="text"
           name="ticker"
-          placeholder="search stock (e.g. AAPL)"
+          placeholder="search company (e.g. Facebook)"
           class='search-input'>  </input>
           <input style="display:none;" type="submit" value="Search"></input>
           <div id="loader" class="loader"></div>
@@ -42,8 +42,10 @@
           <div class="chart-and-stats-wrapper">
             <div class="stock-name-and-price">
 
-                <p class="company-name-title"> Company Name
+              <div class="ticker-flex">
+                <p  id="company-ticker" class="company-ticker">
                 </p>
+              </div>
 
 
 
