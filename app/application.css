@@ -90,13 +90,16 @@ body {
 }
 
 .search-input{
-  font-size: 22px;
   text-align: center;
   margin: 0px 0px 10px 0px;
   padding: 10px 0px 10px 0px;
-  width: 400px;
   background: white;
   border-radius: 3px;
+  height: 40px;
+  color: green;
+  font-size: 34px;
+  width: 600px;
+  transition: all 700ms;
 }
 
 .input-wrapper {
@@ -106,6 +109,7 @@ body {
     align-items: center;
     justify-content: center;
     align-items: center;
+        transition: all 700ms;
 }
 
 
@@ -215,11 +219,11 @@ body {
 }
 
 .loader {
-  border: 8px solid #f3f3f3; /* Light grey */
-  border-top: 8px solid #3498db;
-  border-right: 8px solid green;
-  border-bottom: 8px solid red;
-  border-left: 8px solid blue;  /* Blue */
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid #3498db;
+  border-right: 5px solid green;
+  border-bottom: 5px solid red;
+  border-left: 5px solid blue;  /* Blue */
   border-radius: 50%;
   width: 35px;
   height: 35px;
@@ -266,6 +270,6 @@ body {
   font-weight: 600;
 }
 
-.source {
+.url-source div {
   font-weight: 700;
 }

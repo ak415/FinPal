@@ -346,6 +346,8 @@ class SearchStocks {
     $(".price-flex").css("display", "flex");
     $(".ticker-flex").css("display", "flex");
     $(".input-wrapper").css("margin","40px 0 0 0");
+    $(".search-input").css("width","200px");
+
 
 
   }
