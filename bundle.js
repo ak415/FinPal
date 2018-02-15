@@ -77,6 +77,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 document.addEventListener("DOMContentLoaded", () => {
 window.line;
+
+// let $fetchnews = $('#fetched-news').children();
+// let $chart = $(".chart");
+//
+// if ($fetchnews.length <= 0){
+//   $chart.removeClass('chart');
+// }
+
 let searchStocks = new __WEBPACK_IMPORTED_MODULE_0__search_stocks__["a" /* default */]();
 Object(__WEBPACK_IMPORTED_MODULE_1__stock_chart__["a" /* default */])();
 });
@@ -189,7 +197,7 @@ class SearchStocks {
   // submitSearch(e) {
   //   e.preventDefault();
   //   let result = this.fetchStockIntraday(e.target[0].value);
-  //   console.log(result);
+
   // }
 
   formatPrice(string) {
@@ -230,7 +238,7 @@ class SearchStocks {
     var self = this;
     return $.ajax({
       method: 'GET',
-      url: `https://newsapi.org/v2/top-headlines?q=${this.state.tickerToName[ticker]}&language=en&apiKey=9cb62e8ff29c46899f9bd97ca675b9a5`,
+      url: `https://newsapi.org/v2/top-headlines?q=${this.state.tickerToName[ticker]}&from=2018-02-10&to=2018-02-15&language=en&apiKey=9cb62e8ff29c46899f9bd97ca675b9a5`,
       success:
       function (data){
         self.populateNews(data,ticker);
@@ -239,64 +247,51 @@ class SearchStocks {
   }
 
   populateNews(data,ticker) {
-    for (let i = 0; i < 8; i++) {
-      let titleBeta = document.getElementById(`title${i}`);
-      titleBeta.innerHTML="";
-      let dateBeta = document.getElementById(`date${i}`);
-      dateBeta.innerHTML="";
-      let urlBeta = document.getElementById(`url${i}`);
-      urlBeta.innerHTML="";
-      let sourceBeta = document.getElementById(`source${i}`);
-      sourceBeta.innerHTML="";
+    let fetchnews = document.getElementById('fetched-news');
+
+    if (fetchnews.childNodes.length > 0){
+      fetchnews.innerHTML = "";
     }
 
-    let articles = data.articles;
-    let result = [];
-    for (let i = 0; i < 8; i++) {
-      if (i === articles.length -1 ) {
-        break;
-      }
-      // debugger;
-      let title = document.getElementById(`title${i}`);
-      title.append(JSON.stringify(articles[i].title));
-      let date = document.getElementById(`date${i}`);
-      date.append(JSON.stringify(this.formatDate(articles[i].publishedAt)));
-      let url = document.getElementById(`url${i}`);
-      url.href =`${articles[i].url}`;
-      url.innerHTML="";
-      url.append("Link");
-      let source = document.getElementById(`source${i}`);
-      source.append("From " + JSON.stringify(articles[i].source.name));
-
+    let $chart = $('.chart');
+    let chart2 = document.getElementById('chart2');
+    if (!$chart[0]){
+      chart2.setAttribute('class','chart');
     }
 
+    for (let i=0 ; i <  data.articles.length ; i++){
 
-    for (let j = 0; j < 8; j++) {
-      console.log("in loop");
+      let divtitledate = document.createElement('div');
+      let divtitle = document.createElement('div');
+      let divdate = document.createElement('div');
+      let divsourceurl = document.createElement('div');
+      let divsource = document.createElement('div');
+      let link = document.createElement('a');
 
-      if( $(`#title${j}`).is(':empty') ) {
-        $(`#title${j}`).remove();
-      }
-      if( $(`#date${j}`).is(':empty') ) {
-        $(`#date${j}`).remove();
-      }
-      if( $(`#url${j}`).is(':empty') ) {
-        $(`#url${j}`).remove();
-      }
-      if( $(`#source${j}`).is(':empty') ) {
-        $(`#source${j}`).remove();
-      }
+      divtitledate.setAttribute("class","title-date");
+
+      divtitle.appendChild(document.createTextNode(JSON.parse(JSON.stringify(data.articles[i].title))));
+      divtitle.setAttribute("class","title");
+      divdate.appendChild(document.createTextNode(JSON.parse(JSON.stringify(this.formatDate(data.articles[i].publishedAt)))));
+      divdate.setAttribute("class","date");
+
+      divsourceurl.setAttribute("class","url-source");
+
+      divsource.appendChild(document.createTextNode(JSON.parse(JSON.stringify(data.articles[i].source.name))));
+      link.appendChild(document.createTextNode("Read More »"));
+      link.setAttribute("href",data.articles[i].url);
+
+
+      divtitledate.append(divtitle);
+      divtitledate.append(divdate);
+
+      divsourceurl.append(divsource);
+      divsourceurl.append(link);
+
+      fetchnews.append(divtitledate);
+      fetchnews.append(divsourceurl);
     }
 
-    for (var i = 0; i < 8; i++) {
-
-      if ($(`#url-source${i}`).text().length === 49) {
-        $(`#url-source${i}`).remove();
-      if ($(`#title-date${i}`).text().length === 49) {
-        $(`#title-date${i}`).remove();
-      }
-    }
-    }
 
   }
 
@@ -331,33 +326,27 @@ class SearchStocks {
       success:
       function (data){
         self.handleData(data,ticker);
-
-
-        // let price = document.getElementById("previous-close");
-        // price.innerHTML = "";
-        // let previous_close = Object.values(Object.values(data["Time Series (Daily)"])[0])[3];
-        // price.append(self.formatPrice(previous_close));
-
-        // REAL-TIME
-        // let last_closing_day = Object.keys(data["Time Series"])[0];
-        // res.append(JSON.stringify(data["Time Series"][last_closing_day]));
-
-      }
+      },
+      error: function(jqXHR, exception) {
+        console.log("Error");
+       }
     });
   }
 
   handleData(data,ticker) {
-    console.log(data);
-    let res = document.getElementById("result");
+
     let tickerBeta = document.getElementById("company-ticker");
     tickerBeta.innerHTML="";
     tickerBeta.append(ticker);
-    let last_closing_day = Object.keys(data["Time Series (Daily)"])[0];
-    res.append(JSON.stringify(data["Time Series (Daily)"][last_closing_day]));
     this.populatePrice(data);
     this.populateChart(data);
     this.fetchNews(ticker);
     $("#loader").css("display", "none");
+    $(".news-wrap").css("display", "block");
+    $(".price-flex").css("display", "flex");
+    $(".ticker-flex").css("display", "flex");
+    $(".input-wrapper").css("margin","40px 0 0 0");
+
 
   }
 

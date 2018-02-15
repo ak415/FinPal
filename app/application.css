@@ -78,6 +78,7 @@ body {
   padding-right: 7px;
   padding-left: 7px;
   padding-top: 5px;
+  justify-content: space-between;
 }
 
 .finpal-title {
@@ -99,6 +100,16 @@ body {
 }
 
 .input-wrapper {
+  margin: 100px 0 0 0;
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.input-wrapper-top {
   margin: 40px 0 0 0;
   display: flex;
     flex-direction: row;
@@ -106,6 +117,9 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+
+
 
 .chart {
   background: white;
@@ -167,7 +181,7 @@ body {
 }
 
 .price-flex {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -178,7 +192,7 @@ body {
 }
 
 .ticker-flex {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -224,6 +238,7 @@ body {
   background: #2E582E;
   border-radius: 3px;
   height: 100%;
+  display: none;
 }
 
 
@@ -247,7 +262,10 @@ body {
 }
 
 #fetched-news a {
-  color: #FF0000;
+  color: #0000EE;
   font-weight: 600;
-  padding-right: 5px;
+}
+
+.source {
+  font-weight: 700;
 }
