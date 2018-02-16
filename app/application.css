@@ -22,6 +22,8 @@ span, article, footer, time, small {
 
 body {
   font-family: sans-serif;
+  background: url(http://res.cloudinary.com/aazaiez/image/upload/v1518732278/background_tqww6e.jpg) no-repeat;
+  background-size: cover;
 }
 
 ul {
@@ -56,12 +58,11 @@ html {
 
 body {
   height: 100%;
-  background: #E0F4E0;
 }
 .title-wrapper {
   display: flex;
   justify-content: center;
-  background: #003300;
+  background: #00001a;
 }
 
 .date {
@@ -87,6 +88,8 @@ body {
   margin: 20px 0 20px 0;
   color: white;
   font-family: verdana;
+  color: #cc8800;
+  font-family: Georgia, serif;
 }
 
 .search-input{
@@ -96,14 +99,13 @@ body {
   background: white;
   border-radius: 3px;
   height: 40px;
-  color: green;
+  color: #4d3300;
   font-size: 34px;
   width: 600px;
   transition: all 700ms;
 }
 
 .input-wrapper {
-  margin: 100px 0 0 0;
   display: flex;
     flex-direction: row;
     align-items: center;
@@ -156,21 +158,44 @@ body {
   height: 100%;
 }
 
+.fetched-ceo {
+  padding: 4px 5px 4px 5px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: white;
+  height: 100%;
+  margin-bottom: 30px;
+}
+
+.fetched-employees {
+  padding: 4px 5px 4px 5px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: white;
+  height: 100%;
+  margin-bottom: 30px;
+}
+
+
+
 .wrapper-content {
   margin: 30px 150px 0px 150px
 }
 
 #fetched-news {
   background: white;
-  height: inherit;
 }
 
 .stock-name-and-price{
   display: flex;
+  background: white;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+  align-items: flex-start;
 }
 
 .stock-name{
@@ -181,7 +206,7 @@ body {
 .stock-price {
   font-size: 28px;
   text-align: center;
-  color: white;
+  font-weight: 900;
 }
 
 .price-flex {
@@ -189,19 +214,18 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: #2E582E;
   width: 165px;
   height: 50px;
   border-radius: 3px;
+  align-self: flex-end;
 }
 
 .ticker-flex {
   display: none;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  background: #2E582E;
-  width: 125px;
+  width: fit-content;
   height: 50px;
   border-radius: 3px;
 }
@@ -213,9 +237,10 @@ body {
 
 
 .company-ticker {
+  padding-left: 5px;
   font-size: 28px;
   text-align: center;
-  color: white;
+  font-weight: 700;
 }
 
 .loader {
@@ -238,20 +263,76 @@ body {
 }
 
 .news-wrap {
-  width: 35%;
-  background: #2E582E;
+  width: 100%;
   border-radius: 3px;
-  height: 100%;
+  height: fit-content;
   display: none;
+  margin-bottom: 30px;
+}
+
+.wrap-right{
+  width: 30%;
+  height: fit-content;
 }
 
 
 
 .news-wrap p {
-  font-size: 28px;
-  padding: 8px 20px 5px 20px;
+  padding: 3px 5px 3px 5px;
+  background: #cc8800;
   color: white;
-  margin-bottom: 5px;
+  font-size: 28px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 3px 3px 0px 0px;
+  border-radius: 3px 3px 0px 0px;
+}
+
+.ceo-flex p {
+  padding: 3px 5px 3px 5px;
+  background: #cc8800;
+  color: white;
+  font-size: 28px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 3px 3px 0px 0px;
+  border-radius: 3px 3px 0px 0px;
+}
+
+.footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 30px;
+  width: 100vw;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-container1 {
+  font-size: 30;
+  color: white;
+  padding: 3px 0 0 3px;
+}
+
+.footer-container1:hover  {
+color: #CDAD00;
+}
+
+.employees-flex p {
+  padding: 3px 5px 3px 5px;
+  background: #cc8800;
+  color: white;
+  font-size: 28px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 3px 3px 0px 0px;
+  border-radius: 3px 3px 0px 0px;
+}
+
+.company-info-flex {
+  display: none;
 }
 
 .url-source{
@@ -272,4 +353,60 @@ body {
 
 .url-source div {
   font-weight: 700;
+}
+
+.description-title{
+  padding: 3px 5px 3px 5px;
+  background: #cc8800;
+  color: white;
+  font-size: 28px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 3px 3px 0px 0px;
+  border-radius: 3px 3px 0px 0px;
+}
+
+.finance-info{
+  padding: 3px 5px 3px 5px;
+  background: #cc8800;
+  color: white;
+  font-size: 28px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 3px 3px 0px 0px;
+  border-radius: 3px 3px 0px 0px;
+}
+
+.ticker-string {
+  font-size: 28px;
+  margin: 0 15px 0 5px;
+}
+
+
+.fetched-description {
+  background: white;
+  padding: 5px 5px 5px 5px;
+}
+
+.wrapper-content {
+  display: none;
+}
+
+.currency-string {
+  font-size: 12px;
+  color: #999999;
+  margin: 11px 0 0 4px;
+}
+
+.stock-search-all {
+  padding-top: 200px;
+  display: block;
+}
+
+.errors {
+  color: red;
+text-align: center;
+background: white;
+width: fit-content;
+margin: 0 auto;
+padding: 5px 10px 5px 10px;
+display: none;
 }

@@ -109,6 +109,11 @@ class SearchStocks {
     this.fetchNews = this.fetchNews.bind(this);
     this.populateNews = this.populateNews.bind(this);
     this.formatDate = this.formatDate.bind(this);
+    this.fetchCompanyInfo = this.fetchCompanyInfo.bind(this);
+    this.populateInfo = this.populateInfo.bind(this);
+    this.addCommasToNumber = this.addCommasToNumber.bind(this);
+    // this.fetchCeoInfo = this.fetchCeoInfo.bind(this);
+
     this.state = {
       tickerToName: {
        'V':'VISA',
@@ -146,9 +151,11 @@ class SearchStocks {
        'FMC':'FMC',
        'ABT':'ABBOTT',
        'CTSH':'COGNIZANT',
+       'TWTR':'TWITTER',
     },
     nameToTicker: {
       'VISA': 'V',
+      'TWITTER': 'TWTR',
       'AMAZON':'AMZN',
       'MICRON':'MU',
       'BLIZZARD':'ATVI',
@@ -191,7 +198,16 @@ class SearchStocks {
 
   submitSearch(e) {
     e.preventDefault();
+    let searchErrors = document.getElementById("errors");
+      searchErrors.innerHTML = "";
+
+    if (!Object.values(this.state.tickerToName).includes(e.target[0].value.toUpperCase()))
+     {
+      $(".errors").css('display','block');
+      searchErrors.innerHTML = "Company not found, please try another one.";
+    } else {
     let result = this.fetchStockDaily(this.state.nameToTicker[e.target[0].value.toUpperCase()]);
+  }
   }
   // INTRADAY-REAL TIME
   // submitSearch(e) {
@@ -202,7 +218,7 @@ class SearchStocks {
 
   formatPrice(string) {
     let float_result = parseFloat(string).toFixed(2);
-    return ("$" + float_result.toLocaleString(navigator.language));
+    return this.addCommasToNumber((float_result.toLocaleString(navigator.language)));
   }
 
   formatPriceChart(string) {
@@ -341,12 +357,20 @@ class SearchStocks {
     this.populatePrice(data);
     this.populateChart(data);
     this.fetchNews(ticker);
+    this.fetchCompanyInfo(ticker);
+    // this.fetchCeoInfo(ticker);
     $("#loader").css("display", "none");
     $(".news-wrap").css("display", "block");
     $(".price-flex").css("display", "flex");
     $(".ticker-flex").css("display", "flex");
-    $(".input-wrapper").css("margin","40px 0 0 0");
+    $(".wrapper-content").css("display", "flex");
+    $(".company-info-flex").css("display", "flex");
+    $(".stock-search-all").css("padding-top","50px");
     $(".search-input").css("width","200px");
+    $(".stock-search-all ").css("background","url('http://res.cloudinary.com/aazaiez/image/upload/v1518732733/background_tqww6e_hxgffg.jpg')no-repeat");
+    $(".stock-search-all ").css("background-size","cover");
+    $(".errors").css('display','none');
+
 
 
 
@@ -361,8 +385,9 @@ class SearchStocks {
     this.generategraph(dates,prices);
   }
 
-
-
+  addCommasToNumber(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 
   generategraph(dates,prices){
     let myChart = document.getElementById('stock-chart').getContext('2d');
@@ -375,8 +400,8 @@ class SearchStocks {
         labels: dates,
         datasets: [{
           label: "Historical Stock Prices",
-          backgroundColor: "transparent",
-          borderColor: "rgb(221,85,31)",
+          backgroundColor: "rgb(255, 238, 204)",
+          borderColor: "rgb(153, 102, 0)",
           data: prices
         }]
       },
@@ -384,6 +409,9 @@ class SearchStocks {
 
         legend: {
             display: false,
+        },
+        elements: {
+            point: { radius: 2 }
         },
         tooltips: {
             callbacks: {
@@ -395,6 +423,68 @@ class SearchStocks {
       }
     });
   }
+
+  fetchCompanyInfo(ticker) {
+    var self = this;
+    return $.ajax ({
+      type: "GET",
+      url: `https://api.intrinio.com/companies?ticker=${ticker}`,
+      dataType: 'json',
+      async: false,
+      headers: {
+        "Authorization": "Basic " + btoa("9f4227edd1e1b93df16a98acf253c9b6" + ":" + "5246003dd3f65d684b567a443cb1417e")
+      },
+      success:
+      function (data){
+        self.populateInfo(data,ticker);
+      }
+    });
+  }
+
+
+  populateInfo(data,ticker) {
+    let oldInfo = document.getElementById('fetched-description');
+    let oldCEOInfo  = document.getElementById('fetched-ceo');
+    let oldEmployees  = document.getElementById('fetched-employees');
+
+    if (oldInfo.childNodes.length > 0){
+      oldInfo.innerHTML = "";
+    }
+
+    if (oldCEOInfo.childNodes.length > 0){
+      oldCEOInfo.innerHTML = "";
+    }
+
+    if (oldEmployees.childNodes.length > 0){
+      oldEmployees.innerHTML = "";
+    }
+
+    let descriptionExcerpt = data.short_description;
+    let companyDescription = document.getElementById("fetched-description");
+    companyDescription.append(JSON.parse(JSON.stringify(descriptionExcerpt)));
+
+    let ceoExcerpt = data.ceo;
+    let ceoDescription = document.getElementById("fetched-ceo");
+    ceoDescription.append(JSON.parse(JSON.stringify(ceoExcerpt)));
+
+    let employeesNumber = this.addCommasToNumber(data.employees);
+    let employees = document.getElementById("fetched-employees");
+    employees.append(JSON.parse(JSON.stringify(employeesNumber)));
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 

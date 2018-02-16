@@ -10,6 +10,7 @@
 
     <!-- <link rel="stylesheet" href="./app/css_reset.css"> -->
     <link rel="stylesheet" href="./app/application.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   </head>
   <body>
     <header>
@@ -17,7 +18,246 @@
         <p class="finpal-title">FinPal</p>
       </div>
     </header>
-    <div class="stock-Search">
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+     <div class="tradingview-widget-container__widget"></div>
+     <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+     {
+     "symbols": [
+       {
+         "proName": "INDEX:SPX",
+         "title": "S&P 500"
+       },
+       {
+         "proName": "INDEX:IUXX",
+         "title": "Nasdaq 100"
+       },
+       {
+         "proName": "FX_IDC:EURUSD",
+         "title": "EUR/USD"
+       },
+       {
+         "proName": "BITFINEX:BTCUSD",
+         "title": "BTC/USD"
+       },
+       {
+         "proName": "BITFINEX:ETHUSD",
+         "title": "ETH/USD"
+       }
+     ],
+     "locale": "en"
+    }
+     </script>
+    </div>
+    <!-- TradingView Widget END -->
+
+
+
+
+
+    <!-- TradingView Widget BEGIN -->
+    <!-- <div class="tradingview-widget-container">
+     <div class="tradingview-widget-container__widget"></div>
+     <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+     {
+     "showChart": true,
+     "locale": "en",
+     "width": "400",
+     "height": "660",
+     "plotLineColorGrowing": "rgba(60, 188, 152, 1)",
+     "plotLineColorFalling": "rgba(255, 74, 104, 1)",
+     "gridLineColor": "rgba(233, 233, 234, 1)",
+     "scaleFontColor": "rgba(218, 221, 224, 1)",
+     "belowLineFillColorGrowing": "rgba(60, 188, 152, 0.05)",
+     "belowLineFillColorFalling": "rgba(255, 74, 104, 0.05)",
+     "symbolActiveColor": "rgba(242, 250, 254, 1)",
+     "tabs": [
+       {
+         "title": "Indices",
+         "symbols": [
+           {
+             "s": "INDEX:SPX",
+             "d": "S&P 500"
+           },
+           {
+             "s": "INDEX:IUXX",
+             "d": "Nasdaq 100"
+           },
+           {
+             "s": "INDEX:DOWI",
+             "d": "Dow 30"
+           },
+           {
+             "s": "INDEX:NKY",
+             "d": "Nikkei 225"
+           },
+           {
+             "s": "NASDAQ:AAPL",
+             "d": "Apple"
+           },
+           {
+             "s": "NASDAQ:GOOG",
+             "d": "Google"
+           }
+         ],
+         "originalTitle": "Indices"
+       },
+       {
+         "title": "Commodities",
+         "symbols": [
+           {
+             "s": "CME_MINI:ES1!",
+             "d": "E-Mini S&P"
+           },
+           {
+             "s": "CME:E61!",
+             "d": "Euro"
+           },
+           {
+             "s": "COMEX:GC1!",
+             "d": "Gold"
+           },
+           {
+             "s": "NYMEX:CL1!",
+             "d": "Crude Oil"
+           },
+           {
+             "s": "NYMEX:NG1!",
+             "d": "Natural Gas"
+           },
+           {
+             "s": "CBOT:ZC1!",
+             "d": "Corn"
+           }
+         ],
+         "originalTitle": "Commodities"
+       },
+       {
+         "title": "Bonds",
+         "symbols": [
+           {
+             "s": "CME:GE1!",
+             "d": "Eurodollar"
+           },
+           {
+             "s": "CBOT:ZB1!",
+             "d": "T-Bond"
+           },
+           {
+             "s": "CBOT:UD1!",
+             "d": "Ultra T-Bond"
+           },
+           {
+             "s": "EUREX:GG1!",
+             "d": "Euro Bund"
+           },
+           {
+             "s": "EUREX:II1!",
+             "d": "Euro BTP"
+           },
+           {
+             "s": "EUREX:HR1!",
+             "d": "Euro BOBL"
+           }
+         ],
+         "originalTitle": "Bonds"
+       },
+       {
+         "title": "Forex",
+         "symbols": [
+           {
+             "s": "FX:EURUSD"
+           },
+           {
+             "s": "FX:GBPUSD"
+           },
+           {
+             "s": "FX:USDJPY"
+           },
+           {
+             "s": "FX:USDCHF"
+           },
+           {
+             "s": "FX:AUDUSD"
+           },
+           {
+             "s": "FX:USDCAD"
+           }
+         ],
+         "originalTitle": "Forex"
+       }
+     ]
+    }
+     </script>
+    </div> -->
+    <!-- TradingView Widget END -->
+
+
+
+
+
+
+
+
+    <!-- TradingView Widget BEGIN -->
+<!-- <div class="tradingview-widget-container">
+ <div id="tv-medium-widget"></div>
+ <div class="tradingview-widget-copyright"><span class="blue-text"><a href="https://tradingview.com/symbols/AAPL/" rel="noopener" target="_blank"><span class="blue-text">Apple</span></a>, <a href="https://tradingview.com/symbols/GOOGL/" rel="noopener" target="_blank"><span class="blue-text">Google</span></a>, <a href="https://tradingview.com/symbols/MSFT/" rel="noopener" target="_blank"><span class="blue-text">Microsoft</span></a></span> <span class="blue-text">quotes</span> by TradingView</div>
+ <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+ <script type="text/javascript">
+ new TradingView.MediumWidget(
+ {
+ "container_id": "tv-medium-widget",
+ "symbols": [
+   [
+     "Apple",
+     "AAPL "
+   ],
+   [
+     "TWITTER",
+     "TWTR "
+   ],
+   [
+     "Google",
+     "GOOGL"
+   ],
+   [
+     "Microsoft",
+     "MSFT"
+   ]
+ ],
+ "greyText": "Quotes by",
+ "gridLineColor": "#e9e9ea",
+ "fontColor": "#83888D",
+ "underLineColor": "#dbeffb",
+ "trendLineColor": "#4bafe9",
+ "width": "1000px",
+ "height": "400px",
+ "locale": "en"
+}
+ );
+ </script>
+</div> -->
+<!-- TradingView Widget END -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="stock-search-all">
       <form id="stock-search-form">
         <div class="input-wrapper">
           <input
@@ -30,20 +270,29 @@
           <div id="loader" class="loader"></div>
         </div>
         </form>
+        <div class="errors" id="errors">
+
+        </div>
 
 
 
 
-    <div class="wrapper-content">
+    <div id="wrapper-content" class="wrapper-content">
 
 
         <div class="chart-stats-news-flex">
 
 
           <div class="chart-and-stats-wrapper">
+            <div class="finance-info">
+              FINANCE
+            </div>
             <div class="stock-name-and-price">
 
               <div class="ticker-flex">
+                <!-- <div class="ticker-string">
+                  TICKER:
+                </div> -->
                 <p  id="company-ticker" class="company-ticker">
                 </p>
               </div>
@@ -53,22 +302,55 @@
               <div class="price-flex">
                 <p id="previous-close" class="stock-price">
                 </p>
+                <div class="currency-string">
+                  USD
+                </div>
               </div>
             </div>
 
             <div  id="chart2">
               <canvas id="stock-chart"></canvas>
             </div>
-            <div class="stats">
-              <h2></h2>
+
+            <div id="company-info-flex" class="company-info-flex">
+              <div class="description-flex">
+                <div class="description-title">
+                  DESCRIPTION
+                </div>
+                <div id="fetched-description" class="fetched-description">
+
+                </div>
+              </div>
             </div>
+
+
+
 
           </div>
 
+          <div class="wrap-right">
+
+
           <div class="news-wrap">
-          <p>Latest news</p>
+          <p>LATEST NEWS</p>
            <div id="fetched-news" class"news-flex">
            </div>
+         </div>
+
+         <div class="ceo-flex">
+           <p>CEO</p>
+         </div>
+         <div id="fetched-ceo" class="fetched-ceo">
+
+         </div>
+
+
+
+         <div class="employees-flex">
+           <p>EMPLOYEES</p>
+         </div>
+
+         <div id="fetched-employees" class="fetched-employees">
 
          </div>
 
@@ -88,9 +370,27 @@
 
 
     </div>
-    <div id="result"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
     <script type="text/javascript" src="bundle.js"></script>
+
+
+
+
+
+
+    <div class="footer">
+
+    <a href="https://www.linkedin.com/in/akramazaiez/">
+      <i class="fab fa-linkedin" ></i>
+    </a>
+
+
+
+    <a href="https://github.com/aazaiez/Wheelio">
+      <i class="fab fa-github-square" ></i>
+    </a>
+
+  </div>
   </body>
 </html>
