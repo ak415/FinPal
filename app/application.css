@@ -21,8 +21,8 @@ span, article, footer, time, small {
 }
 
 body {
-  font-family: sans-serif;
-  background: url(http://res.cloudinary.com/aazaiez/image/upload/v1518732278/background_tqww6e.jpg) no-repeat;
+  font-family: Georgia;
+    background: url(http://res.cloudinary.com/aazaiez/image/upload/v1518732278/background_tqww6e.jpg) no-repeat;
   background-size: cover;
 }
 
@@ -61,14 +61,26 @@ body {
 }
 .title-wrapper {
   display: flex;
-  justify-content: center;
   background: #00001a;
+  justify-content: flex-start;
+  height: 80px;
 }
 
+.title-wrapper img {
+  width: 49px;
+    margin: 9px 10px 20px 5px;
+}
+.logo{
+  height: 49px;
+width: 49px;
+align-self: flex-end;
+  margin: 20px 0 20px 0;
+}
 .date {
   width: 35%;
   margin-left: 10px;
   text-align: right;
+  font-style: italic;
 }
 
 .title-date {
@@ -76,9 +88,7 @@ body {
   flex-direction: row;
   box-sizing:border-box;
   width: inherit;
-  padding-right: 7px;
-  padding-left: 7px;
-  padding-top: 5px;
+      padding: 15px 20px;
   justify-content: space-between;
 }
 
@@ -87,21 +97,24 @@ body {
   top: 0%;
   margin: 20px 0 20px 0;
   color: white;
-  font-family: verdana;
+  font-family: Georgia;
   color: #cc8800;
   font-family: Georgia, serif;
 }
+.logo {
+
+}
 
 .search-input{
-  text-align: center;
+  text-align: left;
   margin: 0px 0px 10px 0px;
-  padding: 10px 0px 10px 0px;
+  padding: 10px 15px;
   background: white;
   border-radius: 3px;
   height: 40px;
   color: #4d3300;
-  font-size: 34px;
-  width: 600px;
+  font-size: 30px;
+  width: 450px;
   transition: all 700ms;
 }
 
@@ -137,8 +150,6 @@ body {
 
 .chart-stats-news-flex {
   display: flex;
-
-  margin: 50px;
   font-size: 12px;
 }
 
@@ -159,7 +170,7 @@ body {
 }
 
 .fetched-ceo {
-  padding: 4px 5px 4px 5px;
+  padding: 15px 25px;
   font-size: 18px;
   display: flex;
   flex-direction: row;
@@ -170,7 +181,7 @@ body {
 }
 
 .fetched-employees {
-  padding: 4px 5px 4px 5px;
+  padding: 15px 25px;
   font-size: 18px;
   display: flex;
   flex-direction: row;
@@ -183,7 +194,7 @@ body {
 
 
 .wrapper-content {
-  margin: 30px 150px 0px 150px
+  margin: 30px 50px 0px 50px
 }
 
 #fetched-news {
@@ -196,6 +207,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  padding: 20px 10px;
 }
 
 .stock-name{
@@ -203,12 +215,18 @@ body {
   margin-right: 20px;
 }
 
+canvas {
+  width: 40%;
+}
 .stock-price {
   font-size: 28px;
   text-align: center;
   font-weight: 900;
 }
 
+#chart2 {
+  width: 100%;
+}
 .price-flex {
   display: none;
   flex-direction: row;
@@ -218,6 +236,7 @@ body {
   height: 50px;
   border-radius: 3px;
   align-self: flex-end;
+  font-family: tahoma;
 }
 
 .ticker-flex {
@@ -271,45 +290,54 @@ body {
 }
 
 .wrap-right{
-  width: 30%;
+  width: 40%;
   height: fit-content;
 }
 
 
 
 .news-wrap p {
-  padding: 3px 5px 3px 5px;
+  padding: 6px 10px 6px 10px;
   background: #cc8800;
   color: white;
-  font-size: 28px;
+  font-size: 20px;
   -moz-border-radius: 0px;
   -webkit-border-radius: 3px 3px 0px 0px;
   border-radius: 3px 3px 0px 0px;
 }
 
 .ceo-flex p {
-  padding: 3px 5px 3px 5px;
+  padding: 6px 10px 6px 10px;
   background: #cc8800;
   color: white;
-  font-size: 28px;
+  font-size: 20px;
   -moz-border-radius: 0px;
   -webkit-border-radius: 3px 3px 0px 0px;
   border-radius: 3px 3px 0px 0px;
 }
 
 .footer {
-  text-align: center;
   position: fixed;
   bottom: 0;
   right: 0;
-  height: 30px;
-  width: 100vw;
-  background: white;
+  height: 45px;
+  width: 200px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
 }
+
+.footer a {
+  color: #cc8800;
+  font-size: 44px;
+  margin-right: 10.5px;
+}
+
+.footer a:hover{
+  color: #ffaa00;
+}
+
 
 .footer-container1 {
   font-size: 30;
@@ -322,10 +350,10 @@ color: #CDAD00;
 }
 
 .employees-flex p {
-  padding: 3px 5px 3px 5px;
+  padding: 6px 10px 6px 10px;
   background: #cc8800;
   color: white;
-  font-size: 28px;
+  font-size: 20px;
   -moz-border-radius: 0px;
   -webkit-border-radius: 3px 3px 0px 0px;
   border-radius: 3px 3px 0px 0px;
@@ -342,13 +370,15 @@ color: #CDAD00;
   margin-top: 5px;
   box-sizing:border-box;
   width: inherit;
-  padding: 0 7px 5px 7px;
+  padding: 0px 15px 10px 20px;
   border-bottom:1px solid black;
+  align-items: flex-end;
 }
 
 #fetched-news a {
   color: #0000EE;
   font-weight: 600;
+  padding: 10px 12px 0px 12px;
 }
 
 .url-source div {
@@ -356,34 +386,37 @@ color: #CDAD00;
 }
 
 .description-title{
-  padding: 3px 5px 3px 5px;
+  padding: 6px 10px 6px 10px;
   background: #cc8800;
   color: white;
-  font-size: 28px;
+  font-size: 20px;
   -moz-border-radius: 0px;
   -webkit-border-radius: 3px 3px 0px 0px;
   border-radius: 3px 3px 0px 0px;
 }
 
 .finance-info{
-  padding: 3px 5px 3px 5px;
+  padding: 6px 10px 6px 10px;
   background: #cc8800;
   color: white;
-  font-size: 28px;
+  font-size: 20px;
   -moz-border-radius: 0px;
   -webkit-border-radius: 3px 3px 0px 0px;
   border-radius: 3px 3px 0px 0px;
 }
 
 .ticker-string {
-  font-size: 28px;
+  font-size: 20px;
   margin: 0 15px 0 5px;
 }
 
 
 .fetched-description {
   background: white;
-  padding: 5px 5px 5px 5px;
+  padding: 15px 25px;
+  font-family: verdana;
+  line-height: 1.6;
+  font-size: 16px;
 }
 
 .wrapper-content {
