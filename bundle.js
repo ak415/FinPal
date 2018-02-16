@@ -371,6 +371,7 @@ class SearchStocks {
     $(".stock-search-all ").css("background","url('http://res.cloudinary.com/aazaiez/image/upload/v1518732733/background_tqww6e_hxgffg.jpg')no-repeat");
     $(".stock-search-all ").css("background-size","cover");
     $(".errors").css('display','none');
+    $(".homepage-title").css('display','none');
 
 
 
