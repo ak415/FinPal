@@ -200,6 +200,8 @@ class SearchStocks {
     e.preventDefault();
     let searchErrors = document.getElementById("errors");
       searchErrors.innerHTML = "";
+    window.ticker = this.state.nameToTicker[e.target[0].value.toUpperCase()];
+    window.ticker = e.target[0].value.toUpperCase();
 
     if (!Object.values(this.state.tickerToName).includes(e.target[0].value.toUpperCase()))
      {
